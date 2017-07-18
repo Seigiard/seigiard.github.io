@@ -118,10 +118,12 @@ a.project-link {
     text-decoration: none;
 }
 
+a.project-link h2,
 a.project-link h3 {
     color: #0985ce;
     text-decoration: underline;
 }
+a.project-link:hover h2,
 a.project-link:hover h3 {
     text-decoration: none;
 }
