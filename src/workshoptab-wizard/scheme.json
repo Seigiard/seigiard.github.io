@@ -1,0 +1,785 @@
+{
+    "index": {
+        "title": "Printout & Visual Inspection",
+        "layoutSidebar": "wizard_spain/_tpls/sidebar",
+        "footer": {
+            "prev": {
+                "hidden": true
+            },
+            "next": {
+                "disabled": true
+            }
+        },
+        "layoutJs": [
+            "wizard.js"
+        ],
+        "blocks": [
+            {
+                "block": "title",
+                "label": "index"
+            }
+        ]
+    },
+    "step-1": {
+        "title": "Printout & Visual Inspection",
+        "footer": {
+            "prev": {
+                "hidden": true
+            },
+            "next": {
+                "disabled": false
+            }
+        },
+        "blocks": [
+            {
+                "block": "title",
+                "label": "Printout & Visual Inspection"
+            },
+            {
+                "block": "subtitle",
+                "label": "Print tickets"
+            },
+            {
+                "block": "checkbox",
+                "label": "Reject Cars from the DTCO"
+            },
+            {
+                "block": "checkbox",
+                "label": "Print Technical Printout (1) from the DTCO"
+            },
+            {
+                "block": "radiobuttons_yes",
+                "label": "Is the unit installed according the UE 1266/2009?",
+                "groupName": "reason",
+                "id":"showreason",
+                "labelYes": "Yes",
+                "labelNo": "No"
+            },
+            {
+                "block": "input",
+                "id":"reason",
+                "label": "Enter the reason",
+                "size": "md"
+            },
+            {
+                "block": "radiobuttons_yes",
+                "label": "Is the vehicle unloaded and in good conditions?",
+                "groupName": "notify",
+                "labelYes": "Yes",
+                "id":"shownotify",
+                "labelNo": "No"
+            },
+            {
+                "block": "notice",
+                "id":"notice",
+                "label": "Advice the driver about this issue and repeat the process when the vehicle unloaded and in good conditions",
+                "important": true
+            },
+            {
+                "block": "input",
+                "label": "Sensor homologation",
+                "size": "md"
+            },
+            {
+                "block": "datepicker",
+                "label": "First instalation sensor date",
+                "size": "md"
+            },
+            {
+                "block": "checkbox",
+                "label": "Print Events & Faults printout (2)"
+            },
+            {
+                "block": "checkbox",
+                "label": "Print Overspeed events (3)"
+            }
+        ]
+    },
+    "step-1_1": {
+        "title": "Collect vehicle datas",
+        "footer": {
+            "next": {
+                "disabled": false
+            }
+        },
+        "blocks": [
+            {
+                "block": "title",
+                "label": "Printout & Visual Inspection"
+            },
+            {
+                "block": "subtitle",
+                "label": "Visual Inspection вЂ“ Collect vehicle datas"
+            },
+            {
+                "block": "datepicker",
+                "label": "First vehicle registration date",
+                "size": "md"
+            },
+            {
+                "block": "input",
+                "label": "Vehicle manufacture",
+                "size": "md"
+            },
+            {
+                "block": "input",
+                "label": "Model",
+                "size": "md"
+            },
+            {
+                "block": "input",
+                "label": "MMA",
+                "size": "md"
+            },
+            {
+                "block": "input",
+                "label": "Type",
+                "size": "md"
+            },
+            {
+                "block": "input",
+                "label": "Max. speed",
+                "size": "md"
+            }
+
+        ]
+    },
+    "step-1_2": {
+        "title": "Installation template",
+        "footer": {
+            "next": {
+                "disabled": false
+            }
+        },
+        "blocks": [
+            {
+                "block": "title",
+                "label": "Printout & Visual Inspection"
+            },
+            {
+                "block": "subtitle",
+                "label": "Visual Inspection вЂ“ Installation template"
+            },
+            {
+                "block": "radiobuttons_yes",
+                "label": "Is the vechicle having the installation templated installed?",
+                "groupName": "reason",
+                "id":"showreason",
+                "labelYes": "Yes",
+                "labelNo": "No",
+                "reason":true,
+                "reasonLabel":"Enter the reason"
+            },
+            {
+                "block": "input",
+                "label": "Enter the reason",
+                "id":"reason",
+                "size": "md"
+            },
+            {
+                "block": "input",
+                "label": "Workshop-ID",
+                "size": "md"
+            },
+            {
+                "block": "datepicker",
+                "label": "Date Template",
+                "size": "md"
+            },
+            {
+                "block": "input",
+                "label": "Serial Number DTCO in template",
+                "size": "md"
+            },
+            {
+                "block": "radiobuttons_yes",
+                "label": "Is DTCCO serial number equal to the one on the installation template?",
+                "id":"showreason-two",
+                "groupName": "shownotify",
+                "labelYes": "Yes",
+                "labelNo": "No"
+            },
+            {
+                "block": "input",
+                "label": "Enter the reason",
+                "id":"reason-two",
+                "size": "md"
+            }
+        ]
+    },
+    "step-1_3": {
+        "title": "Printout & Visual Inspection",
+        "footer": {
+            "next": {
+                "disabled": false
+            }
+        },
+        "blocks": [
+            {
+                "block": "title",
+                "label": "Printout & Visual Inspection"
+            },
+            {
+                "block": "subtitle",
+                "label": "Visual inspection - Seals"
+            },
+            {
+                "block": "input",
+                "label": "Number of seals installed",
+                "size": "md"
+            },
+            {
+                "block": "input",
+                "label": "S/N front",
+                "size": "md"
+            },
+            {
+                "block": "input",
+                "label": "S/N template",
+                "size": "md"
+            },
+            {
+                "block": "input",
+                "label": "S/N battery",
+                "size": "md"
+            },
+            {
+                "block": "input",
+                "label": "S/N external dtco 2.2",
+                "size": "md"
+            }
+
+        ]
+    },
+    "step-2": {
+        "title": "Seals and Tyres",
+        "footer": {
+            "next": {
+                "disabled": false
+            }
+        },
+        "blocks": [
+            {
+                "block": "title",
+                "label": "Seals and tyres"
+            },
+            {
+                "block": "subtitle",
+                "label": "Visual seal inspection"
+            },
+            {
+                "block": "radiobuttons_yes",
+                "label": "Has the installation all the seals and all were right?",
+                "groupName": "341",
+                "id":"radio-first",
+                "labelYes": "Yes",
+                "labelNo": "No"
+            },
+            {
+                "block": "checkbox",
+                "label": "Front"
+            },
+            {
+                "block": "checkbox",
+                "label": "Battery"
+            },
+            {
+                "block": "checkbox",
+                "label": "Template"
+            },
+            {
+                "block": "checkbox",
+                "label": "KITAS"
+            },
+            {
+                "block": "checkbox",
+                "label": "DTCO 2.2"
+            }
+
+
+        ]
+    },
+    "step-2_1": {
+        "title": "Visual seal inspection",
+        "footer": {
+            "next": {
+                "disabled": false
+            }
+        },
+        "blocks": [
+            {
+                "block": "title",
+                "label": "Seals and tyres"
+            },
+            {
+                "block": "subtitle",
+                "label": "Visual tyre inspection"
+            },
+            {
+                "block": "input",
+                "label": "Tyre brand",
+                "size": "md"
+            },
+            {
+                "block": "input",
+                "label": "Size",
+                "size": "md"
+            },
+            {
+                "block": "input",
+                "label": "Sculpture",
+                "size": "md"
+            },
+            {
+                "block": "input",
+                "label": "Depth",
+                "size": "md"
+            },
+            {
+                "block": "input",
+                "label": "Lef Pressure",
+                "size": "md"
+            },
+            {
+                "block": "input",
+                "label": "Right Pressure",
+                "size": "md"
+            }
+
+        ]
+    },
+    "step-2_2": {
+        "title": "Visual tyre inspection",
+        "footer": {
+            "next": {
+                "disabled": false
+            }
+        },
+        "blocks": [
+            {
+                "block": "title",
+                "label": "Visual check DTCO components"
+            },
+            {
+                "block": "subtitle",
+                "label": "Visual seal inspection"
+            },
+            {
+                "block": "notice",
+                "label": "Check if all the components are right"
+            },
+            {
+                "block": "checkbox",
+                "label": "Download interface"
+            },
+            {
+                "block": "checkbox",
+                "label": "Menu buttons"
+            },
+            {
+                "block": "checkbox",
+                "label": "LED and alarm (Actia)"
+            },
+            {
+                "block": "checkbox",
+                "label": "Display"
+            },
+            {
+                "block": "checkbox",
+                "label": "Printer"
+            },
+            {
+                "block": "radiobuttons_yes",
+                "label": "Battery changed?",
+                "groupName": "341",
+                "id":"radio-first",
+                "labelYes": "Yes",
+                "labelNo": "No"
+            }
+
+
+        ]
+    },
+    "step-3": {
+        "title": "Card reader / Manipulation check",
+        "footer": {
+            "next": {
+                "disabled": false
+            }
+        },
+        "blocks": [
+            {
+                "block": "title",
+                "label": "Card reader / Manipulation check"
+            },
+            {
+                "block": "subtitle",
+                "label": "Visual inspection вЂ“ Card slot 2"
+            },
+            {
+                "block": "radiobuttons_yes",
+                "label": "Insert workshop card in slot 2. Is slot 2 OK?",
+                "groupName": "341",
+                "labelYes": "Yes",
+                "labelNo": "No",
+                "id":"showreason"
+            },
+            {
+                "block": "button_full",
+                "id":"reason",
+                "label": "Calibration > Manipulation Check > QuickCheck"
+            },
+            {
+                "block": "checkbox",
+                "label": "Clean card slot 1"
+            }
+
+
+        ]
+    },
+    "step-3_1": {
+        "title": "Card reader / Manipulation check",
+        "footer": {
+            "next": {
+                "disabled": false
+            }
+        },
+        "blocks": [
+            {
+                "block": "title",
+                "label": "Card reader / Manipulation check"
+            },
+            {
+                "block": "subtitle",
+                "label": "Read massmemory DTCO"
+            },
+            {
+                "block": "button_full",
+                "label": "Calibration > Manipulation Check > QuickCheck"
+            },
+            {
+                "block": "checkbox",
+                "label": "Check for manipulations"
+            },
+            {
+                "block": "checkbox",
+                "label": "Create Inspection Report"
+            }
+
+
+        ]
+    },
+    "step-4": {
+        "title": "Check KITAS",
+        "footer": {
+            "next": {
+                "disabled": false
+            }
+        },
+        "blocks": [
+            {
+                "block": "title",
+                "label": "Check KITAS"
+            },
+            {
+                "block": "subtitle",
+                "label": "Change installation cables"
+            },
+            {
+                "block": "notice",
+                "label": "Change the vehicle installation for test cable hose KITAS in plug B - yellow"
+            },
+            {
+                "block": "radiobuttons_yes",
+                "label": "Is the KITAS seal correct?",
+                "groupName": "341",
+                "id":"showreason",
+                "labelYes": "Yes",
+                "labelNo": "No"
+            },
+            {
+                "block": "input",
+                "label": "Enter the reason",
+                "id":"reason",
+                "size": "md"
+            },
+            {
+                "block": "input",
+                "label": "Serial number KITAS",
+                "size": "md",
+                "id":"afterreason"
+            }
+
+
+        ]
+    },
+    "step-4_1": {
+        "title": "Check KITAS",
+        "footer": {
+            "next": {
+                "disabled": false
+            }
+        },
+        "blocks": [
+            {
+                "block": "title",
+                "label": "Check KITAS"
+            },
+            {
+                "block": "radiobuttons_yes",
+                "label": "There is any magnet close to the sensor?",
+                "id":"shownotify-last",
+                "groupName": "340",
+                "labelYes": "Yes",
+                "labelNo": "No"
+            },
+            {
+                "block": "notice",
+                "id":"notice",
+                "label": "Remove the magnet and continue",
+                "important": true
+            },
+            {
+                "block": "buttons",
+                "button1": "CALIBRATION > ... > ACTIVATION",
+                "button2": "INFO TCO > ERROR MEMORY",
+                "size": "lg"
+            },
+            {
+                "block": "checkbox",
+                "label": "Withdraw Card in Slot 2"
+            },
+            {
+                "block": "checkbox",
+                "label": "Print Tecnhical Printout (4)"
+            },
+            {
+                "block": "input",
+                "label": "S/N gearbox seal",
+                "size": "md"
+            },
+            {
+                "block": "radiobuttons_yes",
+                "label": "Is the KITAS serial number the same in the 1st and 4th printout?",
+                "id":"showreason",
+                "groupName": "341",
+                "labelYes": "Yes",
+                "labelNo": "No"
+            },
+            {
+                "block": "notice",
+                "id":"reason",
+                "label": "Restore the vehicle installation and insert the workshop card in slot 1 and check if It's working right",
+                "important": true
+            },
+            {
+                "block": "radiobuttons_yes",
+                "label": "Is the sensor affected by electric currents",
+                "id":"shownotify-last-two",
+                "groupName": "322",
+                "labelYes": "Yes",
+                "labelNo": "No"
+            },
+            {
+                "block": "notice",
+                "id":"notice-two",
+                "label": "Change cable or KITAS and repeat process.",
+                "important": true
+            },
+            {
+                "block": "datepicker",
+                "label": "First Instalation sensor date",
+                "size": "md"
+            }
+
+
+
+
+        ]
+    },
+    "step-5": {
+        "title": "Device Testing",
+        "footer": {
+            "next": {
+                "disabled": false
+            }
+        },
+        "blocks": [
+            {
+                "block": "title",
+                "label": "Device Testing"
+            },
+            {
+                "block": "button_full",
+                "label": "Parametrization TCO > Parameters TCO > Legal Parameters"
+            },
+            {
+                "block": "checkbox",
+                "label": "Set odometer value"
+            },
+            {
+                "block": "button_full",
+                "label": "TCO Info > Error memory  > Delete errors"
+            },
+            {
+                "block": "checkbox",
+                "label": "With the vehicle stopped and without contact, check tolerances."
+            },
+            {
+                "block": "button_full",
+                "label": "Calibration > Trial Run> Variable Speed checking"
+            },
+            {
+                "block": "button_full",
+                "label": "Calibration > Trial Run> Odometer ckecking"
+            },
+            {
+                "block": "checkbox",
+                "label": "Variable speed testing at 20,80 and 125 km/h, moving 1000m in each speed"
+            },
+            {
+                "block": "radiobuttons_yes",
+                "label": "Is the tolerance below В±2% for the real distance and В±1%for the real Speed?",
+                "groupName": "341",
+                "id":"radio-last",
+                "labelYes": "Yes",
+                "labelNo": "No"
+            }
+
+        ]
+    },
+    "step-6": {
+        "title": "Parametrization",
+        "footer": {
+            "next": {
+                "disabled": false
+            }
+        },
+        "blocks": [
+            {
+                "block": "title",
+                "label": "Parametrization"
+            },
+            {
+                "block": "button_full",
+                "label": "Calibration > Calibration W/L > Set Correction factor"
+            },
+            {
+                "block": "checkbox",
+                "label": "Clean card slot 2"
+            },
+            {
+                "block": "notice",
+                "label": "With the vehicle over 20 km/h do the measurements of L and W",
+                "important": true
+            },
+            {
+                "block": "button_full",
+                "label": "Calibration > Calibration W/L > Measurement"
+            },
+            {
+                "block": "button_full",
+                "label": "Parametrization TCO > Legal parameters"
+            },
+            {
+                "block": "checkbox",
+                "label": "Set legal parameters"
+            }
+        ]
+    },
+    "step-7": {
+        "title": "Error Checks",
+        "footer": {
+            "next": {
+                "disabled": false
+            }
+        },
+        "blocks": [
+            {
+                "block": "title",
+                "label": "Error Checks"
+            },
+            {
+                "block": "button_full",
+                "label": "Calibration > Calibration W/L > Set Correction factor"
+            },
+            {
+                "block": "checkbox",
+                "label": "Distance Checked"
+            },
+            {
+                "block": "button_full",
+                "label": "Parametrization TCO > Parameters TCO > Legal Parameters"
+            },
+            {
+                "block": "checkbox",
+                "label": "Odometer set"
+            },
+            {
+                "block": "checkbox",
+                "label": "Turn off contact and after 2 minutes..."
+            },
+            {
+                "block": "button_full",
+                "label": "TCO Info > Error memory > Delete errors"
+            },
+            {
+                "block": "checkbox",
+                "label": "Withdraw card slot 1"
+            },
+            {
+                "block": "checkbox",
+                "label": "Print 24H activity printout"
+            },
+            {
+                "block": "checkbox",
+                "label": "Print Technical printout"
+            }
+            
+        ]
+    },
+    "step-8": {
+        "title": "Last Steps",
+        "footer": {
+            "next": {
+                "disabled": false,
+                "title": "Finish"
+            }
+        },
+        "blocks": [
+            {
+                "block": "title",
+                "label": "Last Steps"
+            },
+            {
+                "block": "checkbox",
+                "label": "Insert workshop card in slot 1"
+            },
+            {
+                "block": "button_full",
+                "label": "Calibration > Manipulations > Quick Download"
+            },
+            {
+                "block": "checkbox",
+                "label": "Download mass memory DTCO file (technical data, overview)"
+            },
+            {
+                "block": "notice",
+                "label": "Withdraw the workshop card from DTCO and insert it into tablet",
+                "important": true
+            },
+            {
+                "block": "button_full",
+                "label": "Calibration > Technical > Report"
+            },
+            {
+                "block": "checkbox",
+                "label": "Connect the tablet to the PC to create the report and to print thinstallation report"
+            },
+            {
+                "block": "button_full",
+                "label": "Send IT Files to Extranet PC"
+            }
+        ]
+    }
+}

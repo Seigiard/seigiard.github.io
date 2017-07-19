@@ -119,12 +119,14 @@ a.project-link {
 }
 
 a.project-link h2,
-a.project-link h3 {
+a.project-link h3,
+a.project-link h4 {
     color: #0985ce;
     text-decoration: underline;
 }
 a.project-link:hover h2,
-a.project-link:hover h3 {
+a.project-link:hover h3,
+a.project-link:hover h4 {
     text-decoration: none;
 }
 
@@ -162,6 +164,74 @@ p > img {
 .img-right {
     float: right;
     margin-left: 1.5em;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: stretch;
+    margin: 0 -1.5rem 1.5rem;
+}
+
+.col-1of3 {
+    flex: 1 1  33.33%;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+    min-width: 250px;
+    max-width: 33%;
+    margin-top: 1.5rem;
+}
+.col-2of3 {
+    flex: 0 1 auto;
+}
+
+.not-ready {
+    color: #999;
+}
+.not-ready img {
+    filter: grayscale(1)
+}
+
+.mainpage-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: center;
+    /* margin: 0 -1.5rem; */
+}
+
+.mainpage-header h1 {
+    order: 1;
+    flex: 1 1 auto;
+}
+.mainpage-header__avatar {
+    order: 2;
+    flex: 1 0 20%;
+}
+
+@media only screen and (max-width: 600px) {
+    .mainpage-header {
+        flex-wrap: wrap;
+    }
+    .mainpage-header h1 {
+        margin-top: 0rem;
+        text-shadow: 1px -1px 0px #fff;
+    }
+    .mainpage-header__avatar {
+        order: 1;
+        flex: 0 0 100%;
+        text-align: right;
+    }
+    .mainpage-header__avatar img {
+        width: 35%;
+        display: inline-block;
+        margin-bottom: -15%;
+    }
 }
 
 
@@ -245,7 +315,10 @@ p > img {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+@media only screen and (max-width: 700px) {
+    html {
+        font-size: 110%;
+    }
     /* Style adjustments for viewports that meet the condition */
 }
 

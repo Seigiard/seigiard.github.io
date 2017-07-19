@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox id="MainPane" fx:id="DEVICE_TESTING" styleClass="wt-form" stylesheets="@../../../common/css/metro-ui.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <HBox styleClass="wt-row__title">
+            <children>
+                <Label text="Printout & Visual Inspection"/>
+            </children>
+        </HBox>
+        <VBox styleClass="wt-row__subtitle">
+            <children>
+                <Label text="Print tickets"/>
+                <Separator />
+            </children>
+        </VBox>
+        <HBox styleClass="wt-row__checkbox">
+            <children>
+                <Label text="Reject Cars from the DTCO"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <CheckBox fx:id="checkbox" mnemonicParsing="false"/>
+            </children>
+        </HBox>
+        <HBox styleClass="wt-row__checkbox">
+            <children>
+                <Label text="Print Technical Printout (1) from the DTCO"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <CheckBox fx:id="checkbox" mnemonicParsing="false"/>
+            </children>
+        </HBox>
+        <HBox styleClass="wt-row__radiobuttons_yes" fx:id="showreason">
+            <children>
+                <Label text="Is the unit installed according the UE 1266/2009?"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <RadioButton text="Yes" mnemonicParsing="false"/>
+                <RadioButton text="No" mnemonicParsing="false"/>
+            </children>
+        </HBox>
+        <HBox styleClass="wt-row__input_md" fx:id="reason">
+            <children>
+                <Label text="Enter the reason"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <TextField fx:id="treadDepth"/>
+            </children>
+        </HBox>
+        <HBox styleClass="wt-row__radiobuttons_yes" fx:id="shownotify">
+            <children>
+                <Label text="Is the vehicle unloaded and in good conditions?"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <RadioButton text="Yes" mnemonicParsing="false"/>
+                <RadioButton text="No" mnemonicParsing="false"/>
+            </children>
+        </HBox>
+        <HBox styleClass="wt-row__notice_important" fx:id="notice">
+            <children>
+                <Label text="Advice the driver about this issue and repeat the process when the vehicle unloaded and in good conditions"/>
+            </children>
+        </HBox>
+        <HBox styleClass="wt-row__input_md">
+            <children>
+                <Label text="Sensor homologation"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <TextField fx:id="treadDepth"/>
+            </children>
+        </HBox>
+        <HBox styleClass="wt-row__input_md">
+            <children>
+                <Label text="First instalation sensor date"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <DatePicker fx:id="datePicker"/>
+            </children>
+        </HBox>
+        <HBox styleClass="wt-row__checkbox">
+            <children>
+                <Label text="Print Events & Faults printout (2)"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <CheckBox fx:id="checkbox" mnemonicParsing="false"/>
+            </children>
+        </HBox>
+        <HBox styleClass="wt-row__checkbox">
+            <children>
+                <Label text="Print Overspeed events (3)"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <CheckBox fx:id="checkbox" mnemonicParsing="false"/>
+            </children>
+        </HBox>
+    </children>
+</VBox>
+
