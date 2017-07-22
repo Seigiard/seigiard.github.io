@@ -234,6 +234,17 @@ p > img {
     }
 }
 
+@media only screen and (max-width: 400px) {
+    .mainpage-header__avatar {
+        order: 1;
+        flex: 0 0 100%;
+        text-align: left;
+    }
+    .mainpage-header__avatar img {
+        width: 35%;
+        margin-bottom: 1.5rem;
+}
+
 
 /* ==========================================================================
    Helper classes
@@ -315,12 +326,6 @@ p > img {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (max-width: 700px) {
-    html {
-        font-size: 110%;
-    }
-    /* Style adjustments for viewports that meet the condition */
-}
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
