@@ -202,7 +202,7 @@ p > img {
     justify-content: space-between;
     align-content: flex-start;
     align-items: center;
-    /* margin: 0 -1.5rem; */
+    margin-bottom:1.5rem;
 }
 
 .mainpage-header h1 {
