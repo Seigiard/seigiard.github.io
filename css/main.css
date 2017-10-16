@@ -266,30 +266,26 @@ p > img {
         display: block;
         flex:none;
         box-sizing: border-box;
+        width: 100%;
     }
     .col-1of5 a {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        align-content: flex-start;
-        align-items: stretch;
-        margin: 0 0 1.5rem;
-        box-sizing: border-box;
+        display: block;
+        position: relative;
+        padding-bottom:2rem;
     }
     .col-1of5 a h3 {
-        flex: 0 1 15%;
-        padding: 0;
-        max-width: 15%;
-        min-width: 200px;
+        position: absolute;
+        margin-top:0;
+        bottom:0;
+        left:0;
+        background: #fff;
     }
     .col-1of5 a .rating-image {
-        flex: 1 1 auto;
+        flex: none;
         padding: 0 0 5rem;
-        margin-top:1.5rem;
-        min-width: 250px;
-        max-width: 80%;
-        background: url(../img/bureau-school-rating/rating-full-horizontal.png) top left no-repeat;
+        min-width: 200px;
+        max-width: 100%;
+        background: url(../img/bureau-school-rating/rating-full-horizontal.png) top right no-repeat;
         background-size: cover;
     }
 }
@@ -323,6 +319,7 @@ p > img {
     .mainpage-header__avatar img {
         width: 35%;
         margin-bottom: 1.5rem;
+    }
 }
 
 
