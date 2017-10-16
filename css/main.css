@@ -166,6 +166,13 @@ p > img {
     margin-left: 1.5em;
 }
 
+.rating-image {
+    overflow: hidden;
+    padding-bottom: 300%;
+    margin-top:.5rem;
+    background: url(../img/bureau-school-rating/rating-full-vertical.png) top left no-repeat;
+    background-size: cover;
+}
 .row {
     display: flex;
     flex-direction: row;
@@ -174,6 +181,9 @@ p > img {
     align-content: flex-start;
     align-items: stretch;
     margin: 0 -1.5rem 1.5rem;
+}
+.row-single {
+    flex-wrap: nowrap;
 }
 
 .col-1of2 {
@@ -189,12 +199,24 @@ p > img {
     flex: 1 1 33.33%;
     padding: 0 1.5rem;
     box-sizing: border-box;
-    min-width: 250px;
+    min-width: 220px;
     max-width: 33%;
     margin-top: 1.5rem;
 }
 .col-2of3 {
     flex: 0 1 auto;
+}
+
+.col-4of5 {
+    flex: 0 1 80%;
+    padding: 0 1.5rem;
+    min-width: 250px;
+    max-width: 80%;
+}
+.col-1of5 {
+    flex: 0 1 20%;
+    padding: 0 1.5rem;
+    max-width: 20%;
 }
 
 .not-ready {
@@ -221,6 +243,55 @@ p > img {
 .mainpage-header__avatar {
     order: 2;
     flex: 1 0 20%;
+}
+
+@media only screen and (max-width: 960px) {
+    .row-single {
+        flex-wrap: wrap;
+    }
+    .col-1of3 {
+        flex: 1 1 33.33%;
+        min-width: 250px;
+        max-width: 33%;
+    }
+
+    .col-4of5 {
+        max-width: 100%;
+        display: block;
+        flex: none;
+        box-sizing: border-box;
+    }
+    .col-1of5 {
+        max-width: 100%;
+        display: block;
+        flex:none;
+        box-sizing: border-box;
+    }
+    .col-1of5 a {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-content: flex-start;
+        align-items: stretch;
+        margin: 0 0 1.5rem;
+        box-sizing: border-box;
+    }
+    .col-1of5 a h3 {
+        flex: 0 1 15%;
+        padding: 0;
+        max-width: 15%;
+        min-width: 200px;
+    }
+    .col-1of5 a .rating-image {
+        flex: 1 1 auto;
+        padding: 0 0 5rem;
+        margin-top:1.5rem;
+        min-width: 250px;
+        max-width: 80%;
+        background: url(../img/bureau-school-rating/rating-full-horizontal.png) top left no-repeat;
+        background-size: cover;
+    }
 }
 
 @media only screen and (max-width: 600px) {
