@@ -243,6 +243,15 @@ p > img {
 .mainpage-header__avatar {
     order: 2;
     flex: 1 0 20%;
+    margin-top: 1.5em;
+    background: url(../img/avatar-hover.jpg) center center no-repeat;
+    background-size: cover;
+}
+.mainpage-header__avatar img {
+    margin-top: 0;
+}
+.mainpage-header__avatar:hover img {
+    opacity: 0;
 }
 
 @media only screen and (max-width: 960px) {
