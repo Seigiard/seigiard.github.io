@@ -1,0 +1,21 @@
+<script>
+function isNav(){
+  if(!window.performance) {
+    return true
+  }
+  
+  if(performance.getEntriesByType) {
+    var navList = performance.getEntriesByType("navigation");
+    if (!navList.length) {
+      return true;
+    }
+    return [0].type === "navigate"
+  }
+  if(performance.navigation){
+    return performance.navigation.type === 0
+  }
+  
+  return false
+}
+document.write(isNav() ? 'пришёл напрямую' : 'перезагрузил или по истории вернулся или ещё какая хуйня')
+</script>
