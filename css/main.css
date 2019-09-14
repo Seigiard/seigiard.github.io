@@ -102,13 +102,13 @@ body {
 }
 
 a {
-    color: #0985ce;
+    color: #056ca9;
     -webkit-text-decoration-skip: ink;
     text-decoration-skip: ink;
 }
 
 a:hover, a:active {
-    color: #8c64b4;
+    color: #003fbb;
     text-decoration: none;
 }
 
@@ -121,12 +121,13 @@ a.project-link {
 a.project-link h2,
 a.project-link h3,
 a.project-link h4 {
-    color: #0985ce;
+    color: #056ca9;
     text-decoration: underline;
 }
 a.project-link:hover h2,
 a.project-link:hover h3,
 a.project-link:hover h4 {
+    color: #003fbb;
     text-decoration: none;
 }
 
