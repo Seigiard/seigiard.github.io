@@ -19,75 +19,102 @@
 
         <link rel="stylesheet" href="css/typography.css">
         <link rel="stylesheet" href="css/main.css">
+        <style>
+            section + section {
+                margin-top: 2rem;
+            }
+            section h3 small {
+                font-size: 75%;
+            }
+        </style>
     </head>
     <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
-        <header>
-            <h1>Andrew Borisenko</h1>
-            <p class="contacts">
-                <a href="tel:+380962249364" class="inline-print-only">+38&nbsp;(096) 224-93-64</a>
-                <a href="mailto:seigiard@gmail.com">seigiard@gmail.com</a>
-                <a href="mailto:seigiard@gmail.com">skype: seigiard</a>
-            </p>
+        <header class="mainpage-header">
+            <div class="mainpage-header__avatar"><img src="img/avatar.jpg" alt="Андрей Борисенко" /></div>
+            <h1>Андрей Борисенко</h1>
         </header>
+        <p class="contacts">
+            <a href="tel:+380962249364" class="inline-print-only">+38&nbsp;(096) 224-93-64</a>
+            <a href="mailto:seigiard@gmail.com">seigiard@gmail.com</a>
+            <a href="mailto:seigiard@gmail.com">skype: seigiard</a>
+        </p>
         <h2>Summary</h2>
-        <p>Results-oriented professional with five years experience in javascript frontend developer and fourteen years experience in web development.</p>
+        <p>Results-oriented professional with more than fifteen years experience in web development.</p>
         <p>I make it my goal to create applications and web-sites with the user in mind, creating applications with a useable and intuitive user interface experience. I also understand the importance of creating highly readable and easily maintainable source code.</p>
         <p>I am constantly striving to learn new technologies and look to ways to better myself in this rapidly changing industry.</p>
         <h2>Technical Skills</h2>
         <ul>
             <li>Strong experience in Web App Development;</li>
             <li>Strong Javascript & ES6/7 knowledge;</li>
+            <li>Strong experience in Site SpeedUp and Accessibility;</li>
             <li>Strong HTML & CSS knowledge;</li>
             <li>Experience in UI/UX, Typography and Design</li>
             <li>Experience in UI Prototyping & Wire framing</li>
-            <li>Familiar with Agile and Scrum Processes</li>
+            <li>Experience in Agile and Scrum Processes</li>
         </ul>
-        <dl>
-            <dt>Languages:</dt>
-            <dd>Vue&nbsp;(2+  years experience), Angular&nbsp;(2), Riot&nbsp;(1), Ionic&nbsp;(1), JavaScript&nbsp;(10+), HTML&nbsp;(14+), CSS&nbsp;(14+), PHP&nbsp;(5);</dd>
-            <dt>TDD:</dt>
-            <dd>Jest&nbsp;(1+), Karma&nbsp;(2), Mocha&nbsp;(2), Jasmine&nbsp;(2);</dd>
-            <dt>Task Managers:</dt>
-            <dd>Webpack&nbsp;(3+), Gulp&nbsp;(3), Grunt&nbsp;(4);</dd>
-            <dt>Databases:</dt>
-            <dd>PostgreSQL&nbsp;(3+); MySQL&nbsp;(5); MongoDb&nbsp;(1);</dd>
-        </dl>
+
         <h2>Work Experience</h2>
-        <h3>Head of Front-End Department, Cloud Consulting AS<br />2015—current time</h3>
-        <dl>
-            <dt>WorkshopTab Wizard Interface Builder</dt>
-            <dd>Invented and made app that makes HTML prototypes of screens of real JAVA application and generates FXML-layouts. It helps developer team to communicate with managers and works faster.
-                <br><small>Technologies: Harp.js, JS, HTML, CSS, FXML</small>
-            </dd>
-            <dt>DTCO Configurator</dt>
-            <dd>Made and prototyped UI of application that helps configure digital tachographs.
-                <br><small>Technologies: Sketch, Flinto, Xamarin</small>
-            </dd>
-            <dt>NCF Event Calendar</dt>
-            <dd>Renovate UI system of web-app, built frontend part of service.
-                <br><small>Technologies: Vue.js, HTML, CSS</small>
-            </dd>
-        </dl>
-        <h3>Senior Frontend JavaScript Developer, Cloud Consulting AS<br />2013—2015</h3>
-         <dl>
-            <dt>Fartskriver SAFE APP</dt>
-            <dd>Made UI of mobile app, developed mobile app, developed frontend web-app.
-                <br><small>Technologies: Sketch, Angular, HTML, CSS</small>
-            </dd>
-        </dl>
-        <p>Made number of applications/prototypes/mockups based on JS frameworks or pure HTML+CSS+JS with backend on Ruby / Java</p>
-        <h3>Frontend Developer / UX designer, razzom.com<br />2012—2013</h3>
-        <p>Made frontend part of service, analyzed and improved UI solutions.</p>
-        <h3>Web Developer, Artais Web Studio 2008—2013</h3>
-        <p>Developing the web-framework for typical sites based on company's CMS.</p>
-        <p>Made up over 50 sites using HTML5, CSS3 and JS.</p>
-        <h3>Frontend Web Developer / UX designer, Freelance<br />2005—2013</h3>
-        <p>Developed more than hundred sites using HTML, CSS and JS.</p>
-        <p>Had a few UI projects and a dozen of PHP projects.</p>
+        <section>
+            <header>
+                <h3>Engineering Manager, Moovweb
+                <br /><small>2017—current time</small></h3>
+            </header>
+        </section>
+        <section>
+            <header>
+                <h3>Head of Front-End Department, Cloud Consulting AS
+                    <br /><small>2015—2017</small></h3>
+            </header>
+            <dl>
+                <dt>WorkshopTab Wizard Interface Builder</dt>
+                <dd>Invented and made app that makes HTML prototypes of screens of real JAVA application and generates FXML-layouts. It helps developer team to communicate with managers and works faster.
+                    <br><small>Technologies: Harp.js, JS, HTML, CSS, FXML</small>
+                </dd>
+                <dt>DTCO Configurator</dt>
+                <dd>Made and prototyped UI of application that helps configure digital tachographs.
+                    <br><small>Technologies: Sketch, Flinto, Xamarin</small>
+                </dd>
+                <dt>NCF Event Calendar</dt>
+                <dd>Renovate UI system of web-app, built frontend part of service.
+                    <br><small>Technologies: Vue.js, HTML, CSS</small>
+                </dd>
+            </dl>
+        </section>
+        <section>
+            <header>
+                <h3>Senior Frontend JavaScript Developer, Cloud Consulting AS
+                    <br /><small>2013—2015</small></h3>
+            </header>
+            <dl>
+                <dt>Fartskriver SAFE APP</dt>
+                <dd>Made UI of mobile app, developed mobile app, developed frontend web-app.
+                    <br><small>Technologies: Sketch, Angular, HTML, CSS</small>
+                </dd>
+            </dl>
+            <p>Made number of applications/prototypes/mockups based on JS frameworks or pure HTML+CSS+JS with backend on Ruby / Java</p>
+        </section>
+        <section>
+            <header>
+                <h3>Frontend Developer / UX designer, razzom.com
+                    <br /><small>2012—2013</small></h3>
+            </header>
+            <p>Made frontend part of service, analyzed and improved UI solutions.</p>
+        </section>
+        <section>
+            <header>
+                <h3>Web Developer, Artais Web Studio
+                    <br /><small>2008—2013</small></h3>
+            </header>
+            <p>Developing the web-framework for typical sites based on company's CMS.</p>
+            <p>Made up over 50 sites using HTML5, CSS3 and JS.</p>
+        </section>
+        <section>
+            <header>
+                <h3>Frontend Web Developer / UX designer, Freelance
+                    <br /><small>2005—2013</small></h3>
+            </header>
+            <p>Developed more than hundred sites using HTML, CSS and JS.</p>
+            <p>Had a few UI projects and a dozen of PHP projects.</p>
+        </section>
     </body>
 </html>
