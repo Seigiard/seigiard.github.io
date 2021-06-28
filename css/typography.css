@@ -36,6 +36,21 @@ blockquote {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
+details {
+  margin-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+summary {
+  outline: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip: ink;
+}
+summary:hover {
+  text-decoration: none;
+}
 /* Headings */
 h1,
 h2,

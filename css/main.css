@@ -424,9 +424,13 @@ p > img {
    ========================================================================== */
 .inline-print-only {
     display: none;
+    margin-right: 1rem;
 }
 
 @media print {
+    .avoid-page-break {
+        page-break-inside: avoid;
+    }
     @page {
         size: A4;
         margin: 1cm 2cm;
@@ -445,7 +449,7 @@ p > img {
     }
 
     html {
-        font-size: 100%;
+        font-size: 80%;
     }
 
     body {
@@ -480,6 +484,22 @@ p > img {
     a[href^="#"]:after,
     a[href^="javascript:"]:after {
         content: "";
+    }
+
+
+    h1 {
+        font-size: 3.242rem;
+        line-height: 4.5rem;
+        margin-top: 3rem;
+    }
+    h2 {
+        font-size: 2.428rem;
+        line-height: 3rem;
+        margin-top: 3rem;
+    }
+
+    details:not([open]) {
+        display: none;
     }
 
     pre,
@@ -517,4 +537,9 @@ p > img {
     h3 {
         page-break-after: avoid;
     }
+
+    .mainpage-header__avatar {
+        flex: 0 0 25%;
+    }
+    .contacts a { text-decoration: none; }
 }
