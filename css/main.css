@@ -465,7 +465,9 @@ p > img {
     /* a[href]:after {
         content: " (" attr(href) ")";
     } */
-
+    abbr[title] {
+        border-bottom: none;
+    }
     abbr[title]:after {
         content: " (" attr(title) ")";
     }

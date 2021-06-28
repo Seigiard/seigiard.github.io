@@ -87,6 +87,11 @@ table th {
 code {
   vertical-align: bottom;
 }
+abbr[title] {
+  text-decoration: none;
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
 /* Leading paragraph text */
 .lead {
   font-size: 1.414rem;
