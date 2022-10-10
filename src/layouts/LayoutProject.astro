@@ -1,0 +1,24 @@
+---
+import Header, { Props as HeaderProps } from "../components/Header.astro";
+
+export interface Props extends HeaderProps {}
+
+const props = Astro.props;
+const { title, lang } = props;
+
+const ownerName = lang === "ru" ? "Андрей Борисенко" : "Andrew Borisenko";
+---
+
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+  <head>
+    <Header {...props} />
+  </head>
+  <body>
+    <header>
+      <nav><a href="/index.html">{ownerName}</a></nav>
+      <h1>{title}</h1>
+    </header>
+    <main><slot /></main>
+  </body>
+</html>

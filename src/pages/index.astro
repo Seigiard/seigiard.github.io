@@ -1,0 +1,105 @@
+---
+import Layout from "../layouts/Layout.astro";
+import MyProjectsList from "../components/MyProjectsList.astro";
+---
+
+<Layout lang={"ru"}>
+  <p>
+    Верстать начал в&nbsp;1998 году, с&nbsp;2003 года работаю во&nbsp;фронтенде.
+    Разрабатываю сайты и&nbsp;приложения на&nbsp;JS. Умею сделать так,
+    чтобы&nbsp;сайт работал на&nbsp;ИЕ8, если&nbsp;это&nbsp;нужно.
+  </p>
+
+  <p>
+    Сейчас управляю проектами и оптимизирую веб-приложения/сайты на&nbsp;React.
+  </p>
+
+  <p>
+    Моё увлечение —&nbsp;дизайн, интерфейсы и&nbsp;взаимодействие
+    с&nbsp;пользователями.
+  </p>
+
+  <p>
+    Знаю OOP, FRP, React, Vue, Angular, Flux, Redux, Mobx, Agile, Scrum, Kanban
+    и&nbsp;прочие модные слова на&nbsp;острие технологий. Интересуюсь новинками
+    веба и&nbsp;стараюсь их&nbsp;пощупать.
+  </p>
+
+  <p>Почта: <a href="mailto:seigiard@gmail.com">seigiard@gmail.com</a>.</p>
+
+  <h2>Работа</h2>
+  <MyProjectsList />
+
+  <h2>Сделал разные штуки</h2>
+  <div class="row row-single">
+    <div class="col-4of5 my-1.5">
+      <a href="/projects/workshoptab-wizard" class="project-link">
+        <img
+          src="img/workshoptab-wizard/teaser.jpg"
+          alt="Вокршоптаб Визард"
+          class="border-bottom"
+        />
+        <h2 class="mt-0">Воркшоптаб Визард</h2>
+        <p class="mt-0">
+          проводит проверку грузовых машин с&nbsp;помощью цифрового тахографа
+          и&nbsp;блютус-передатчика СмартЛинк.
+        </p>
+      </a>
+      <div class="row mb-0">
+        <div class="col-1of3 mt-1.5">
+          <a href="/projects/dtco-configurator" class="project-link">
+            <img
+              src="img/dtco-conf/teaser-dtco.png"
+              alt="Конфигуратор тахографов"
+              class="border-bottom"
+            />
+            <h3 style="mt-0">Конфигуратор тахографов</h3>
+          </a>
+        </div>
+        <div class="col-1of3 mt-1.5">
+          <a href="/projects/safe-app" class="project-link">
+            <img src="img/safe/teaser-safe.png" alt="С-Е-Й-Ф" />
+            <h3>С-Е-Й-Ф</h3>
+          </a>
+        </div>
+        <div class="col-1of3 mt-1.5">
+          <a href="http://seigiard.com/znkmtr/" class="project-link">
+            <img src="img/znkmr/znkmr-teaser.png" alt="Знакомер" />
+            <h3>Знакомер</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-1of5 project-rating my-1.5">
+      <a href="http://seigiard.com/bureau-school-rating/" class="project-link">
+        <h3>Рейтинг студентов школы бюро 2017</h3>
+        <div
+          class="rating-image"
+          class="border-bottom"
+          title="Рейтинг студентов школы бюро 2017"
+        >
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <h2>Образование</h2>
+  <section>
+    <header>
+      <h3>
+        Белорусский Национальный Технический Институт
+        <br /><small>2001—2004</small>
+      </h3>
+    </header>
+    <p>Факультет информационный технологий</p>
+  </section>
+  <section>
+    <header>
+      <h3>
+        Белорусский Государственный Университет
+        <br /><small>1999—2000</small>
+      </h3>
+    </header>
+    <p>Факультет прикладной математики и&nbsp;информатики</p>
+  </section>
+</Layout>

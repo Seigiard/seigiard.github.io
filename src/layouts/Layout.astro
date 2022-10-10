@@ -1,0 +1,32 @@
+---
+import Header, { Props as HeaderProps } from "../components/Header.astro";
+
+export interface Props extends HeaderProps {}
+
+const props = Astro.props;
+const ownerName = props.lang === "ru" ? "Андрей Борисенко" : "Andrew Borisenko";
+---
+
+<!DOCTYPE html>
+<html class="no-js" lang={props.lang}>
+  <head>
+    <Header {...props} />
+    <style>
+      section + section {
+        margin-top: 2rem;
+      }
+      section h3 small {
+        font-size: 75%;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="mainpage-header">
+      <div class="mainpage-header__avatar">
+        <img src="img/avatar.jpg" width="100" height="100" alt={ownerName} />
+      </div>
+      <h1>{ownerName}</h1>
+    </header>
+    <main><slot /></main>
+  </body>
+</html>

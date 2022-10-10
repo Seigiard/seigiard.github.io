@@ -1,0 +1,26 @@
+---
+import HeaderMeta from "./HeaderMeta.astro";
+
+export interface Props {
+  lang?: "ru" | "en";
+  title?: string;
+  description?: string;
+}
+
+const { lang = "ru", title, description } = Astro.props;
+
+const siteTitle =
+  lang === "ru"
+    ? "Андрей Борисенко, веб-разработчик"
+    : "Andrew Borisenko, Web Developer";
+
+const defaultSiteDescription =
+  lang === "ru"
+    ? "Разрабатываю сайты и приложения на JS. Умею сделать так, чтобы сайт работал на ИЕ8, если это нужно."
+    : "Results-oriented professional with more than fifteen years experience in web development.";
+---
+
+<HeaderMeta>
+  <title>{title && `${title} • `}{siteTitle}</title>
+  <meta name="description" content={description || defaultSiteDescription} />
+</HeaderMeta>
