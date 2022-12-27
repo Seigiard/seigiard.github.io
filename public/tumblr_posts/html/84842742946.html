@@ -1,0 +1,72 @@
+        <!DOCTYPE HTML>
+        <html>
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+                <link rel="stylesheet" type="text/css" href="../style.css"/>
+            </head>
+            <body>
+                
+                
+                                    <h1>Компиляция Stylus и Nib в Yeoman 0.9</h1>
+                    <p>В папке проекта устанавливаем stylus: <tt>npm install grunt-stylus</tt></p>
+
+<p>Открываем <tt>package.json</tt>, добавляем зависимость <tt>&ldquo;dependencies&rdquo;: { &ldquo;grunt-stylus&rdquo; : &ldquo;*&rdquo; }</tt></p>
+
+<p>Открываем <tt>Gruntfile.js</tt>, в самое начало добавляем <tt>grunt.loadNpmTasks(&lsquo;grunt-stylus&rsquo;);</tt></p>
+
+<p>В середине файла делаем секцию для Stylus:</p>
+
+<pre><code>    stylus: {
+      compile: {
+        options: {
+          urlfunc: 'embedurl' // через el { background:embedurl("logo.png"); } мы получим base64-встроенную картинку
+          'include css': true,
+          'paths': ['path/to/import', 'another/to/import']
+        },
+        files: {
+          'app/styles/main.css': 'app/styles/scss/main.styl'
+        }
+      }
+    },
+</code></pre>
+
+<p>Дальше, как всегда, определяем в watch, чтобы изменения в файлах вызывали компиляцию и обновление окна проекта:</p>
+
+<pre><code>watch: {
+     ...
+      stylus: {
+        files: ['app/styles/scss/*.styl', 'app/styles/scss/**/*.styl'],
+        tasks: 'stylus'
+      },
+      reload: { // или добавляем в существующую
+        files: [
+          'app/styles/scss/*.styl',
+          'app/styles/scss/**/*.styl'
+        ]
+      }
+     ...
+</code></pre>
+
+<p>В самом низу добавляем/изменяем крайне важные строки. Это позволит скомпилировать jade-шаблоны перед запуском сервера.</p>
+
+<pre><code>// include jade and stylus compile
+  grunt.renameTask('server', 'original-server');
+  grunt.registerTask('server', 'stylus original-server');</code></pre>
+
+<h3>А как же Nib?</h3>
+
+<p>Поддержка Nib уже включена. Напишите <tt>@import 'nib&rsquo;;</tt> там, где вам нужен Nib.</p>
+                
+                
+                
+                
+                
+                
+                                <div id="footer">
+                <span id="timestamp"> February 23rd, 2013 1:11pm </span>
+                                                          <span class="tag">Blog</span>
+                                                    </div>
+            </body>
+        </html>
+
+        

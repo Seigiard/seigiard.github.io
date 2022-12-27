@@ -1,0 +1,85 @@
+        <!DOCTYPE HTML>
+        <html>
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+                <link rel="stylesheet" type="text/css" href="../style.css"/>
+            </head>
+            <body>
+                
+                
+                                    <h1>Уменьшение текста до ширины родительского блока</h1>
+                    <p>Пришлось решать задачу, чтобы текст не разбивался на две строки, а уменьшал размер шрифта, чтобы полностью вмещался в родительский элемент на одной строке.</p>
+
+<p>Получился небольшой плагин.</p>
+
+<pre><code class="jquery">/*global jQuery */
+/*! 
+* Fittext.js 0.1
+*
+* Made by Borisenko Andrew <a href="http://seigiard.com">http://seigiard.com</a>
+*/
+
+(function( $ ){
+  $.fn.fittext = function( options ) {
+    settings = $.extend({
+      'minFontSize' : 12
+    }, options);
+  
+    return this.each(function(){
+
+      // Store the object
+      var $this = $(this); 
+      var $originalSize = parseInt($this.css("font-size"), 10);
+        
+      var resizer = function () {
+
+        var size = $originalSize;
+        var desired_width = $this.parent().width()-20;
+
+        var resizer = $this.clone().wrapInner("&lt;NOBR&gt;").appendTo($this.parent());
+        resizer.css({
+          "float":"left", "visibility":"hidden", 
+          "height":1, "white-space":"nowrap", 
+          "font-size": $originalSize
+        });
+
+        while(resizer.width() &gt; desired_width &amp;&amp; size &gt; settings.minFontSize) {
+          size--;
+          resizer.css("font-size", size);
+        }
+
+        $this.css("font-size", size);
+        resizer.remove();
+      };
+
+      resizer();
+
+      $(window).on('resize', resizer);
+
+    });
+  };
+})( jQuery );
+</code></pre>
+
+<p>Вызов прост, передается только параметр минимального размера шрифта.</p>
+
+<pre><code class="js">$(window).load(function() {
+  $("#sidebar &gt; h1:first").fittext({ minFontSize: 30});
+});
+</code></pre>
+
+<p>Почему $(window).load? Догадайтесь сами.</p>
+                
+                
+                
+                
+                
+                
+                                <div id="footer">
+                <span id="timestamp"> January 8th, 2013 9:19am </span>
+                                                          <span class="tag">Blog</span>
+                                                    </div>
+            </body>
+        </html>
+
+        

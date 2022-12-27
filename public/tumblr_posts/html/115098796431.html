@@ -1,0 +1,24 @@
+        <!DOCTYPE HTML>
+        <html>
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+                <link rel="stylesheet" type="text/css" href="../style.css"/>
+            </head>
+            <body>
+                
+                
+                                    <h1>SystemUpdateService ест батарею</h1>
+                    <p>Перепрошивал свой SGS3 на разные прошивки и заметил, что Google Play Service постоянно будит телефон и разряжает батарею.</p><p>Если на прошивке LiquidSmooth эта проблема разогревала телефон, просто лежащий на столе, то в Mahdi ROM это было не так ярко выражено и выходные я провел во Львове со сносно работающим телефоном.</p><p>Однако в эти дни собиралась статистика, которая показала, что этот непрошеный wakelock не дает уйти телефону в глубокий сон, сжирая за ночь неактивности около 20% заряда.</p><p>Я нашел два пути решения проблемы.</p><h2>1) DisableService</h2><p>Используя DisableService, заходим в Системные, Google Play Service и <b>включаем</b> SystemUpdateService. Повторяем для Google Service Framework.<br/>Systemupdateservice wakelock исчезает и все становится хорошо. </p><p>Одно плохо: после ребута галки слетают и жор начинается снова.</p><h2>2) Через настройки системы</h2><p>Базируясь на <a href="http://4pda.ru/forum/index.php?showtopic=537491&amp;view=findpost&amp;p=38992956">сообщении от papsi</a> и <a href="http://forum.xda-developers.com/nexus-4/help/google-play-services-persistent-wakelock-t3051863">теме на xda</a> сделал следующее:</p><blockquote>Настройки &gt; Приватность &gt; Защищенный режим &gt; Дополнительно &gt; Сервисы Google Play<br/>Settings &gt; Privacy Guard &gt; Advanced &gt; Google Play Services</blockquote><p>Выставить настройки «Вывод из режима сна» и «Автозапуск» (&ldquo;Wake up&rdquo; и &ldquo;Keep awake&rdquo;) в «Denied».</p><p>После ребута жора не наблюдается, хотя чекбоксы из первого пункта снова слетели и выключены.</p>
+                
+                
+                
+                
+                
+                
+                                <div id="footer">
+                <span id="timestamp"> March 31st, 2015 1:26am </span>
+                                </div>
+            </body>
+        </html>
+
+        

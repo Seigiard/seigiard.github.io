@@ -1,0 +1,63 @@
+        <!DOCTYPE HTML>
+        <html>
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+                <link rel="stylesheet" type="text/css" href="../style.css"/>
+            </head>
+            <body>
+                
+                
+                                    <h1>Проверка статусов сервисов и перезагрузка при необходимости</h1>
+                    <p>Почему-то регулярно в 6 утра у меня отваливался mysql на сервере. Бороться с проблемой надо, мониторить вручную глупо, ковырять настройки — не хватает умений и дзена.</p>
+
+<p>Проблему надо решать в лоб и максимально простыми способами. Поэтому нашел на просторах сети небольшой небольшой скрипт, модернизировал его и повесил в крон.</p>
+
+<pre><code>#!/bin/bash
+
+#######################################################################
+# Проверка статуса php5-fpm, nginx, mysql, ssh и перезагрузка сервисов при необходимости
+#######################################################################
+
+checkThread()
+{
+  if [ -n "$1" ]; then
+    if [ `/bin/ps -A|/bin/grep $1|/usr/bin/wc -l` -eq 0 ]; then
+      echo "ОШИБКА:"
+      echo "-- При проверке обнаружено, что $1 не был запущен!"
+      echo "-- Произведена попытка запуска в $(date +"%d.%m.%y %H:%M:%S")..."
+
+      /usr/sbin/service $1 start
+      /bin/sleep 1
+      checkThread $1
+    else
+      echo "-- $1 сейчас запущен";
+    fi
+  fi
+}
+
+checkThread mysql
+checkThread nginx
+checkThread ssh
+checkThread php5-fpm
+</code></pre>
+
+<p>Все работает. А если не работает — попробуйте добавить магические строки в крон:</p>
+
+<pre><code>SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin?
+</code></pre>
+
+<p>PS: Внимательные читатели заметили, что везде в скриптах я пишу вызов от корня. Да, это сделано специально, чтобы скрипт, запускающийся через cron — заработал.</p>
+                
+                
+                
+                
+                
+                
+                                <div id="footer">
+                <span id="timestamp"> September 20th, 2013 12:09am </span>
+                                </div>
+            </body>
+        </html>
+
+        

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+  </head>
+  <body>
+    <h1>Идеальный Markdown для Sublime Text 2</h1>
+    <blockquote>
+      <p>
+        Я горячей любовью люблю Markdown, использую его в своих проектах и
+        всячески пропагандирую. Маркдаун прост в изучении, легок в использовании
+        и не отвлекает от сути: написания текстов. Мы пишем тексты на Markdown и
+        на <a href="http://hapahulu.ru">Hapahulu</a> и в
+        <a href="http://odesseya.tumblr.com">Одессее</a>.
+      </p>
+    </blockquote>
+    <p>
+      Когда я познакомился с разметкой Markdown, первым порывом была установка
+      <a href="http://bywordapp.com/">ByWord</a> для красивого визуального
+      отображения md-текстов.
+    </p>
+    <p>
+      Но минимализм требует своего (я регулярно стараюсь делать чистки, уменьшая
+      количество используемых программ) и я задумался об альтернативе. Если я
+      постоянно использую
+      <a href="http://www.sublimetext.com/">Sublime Text 2</a> (ST2), то почему
+      бы не использовать его для работы с md-текстами?
+    </p>
+    <p>
+      Да, ST2 поддерживает markdown-разметку, но хотелось большего. Хотелось
+      такой-же красоты, как и в ByWord. И это возможно!
+    </p>
+    <p>
+      Для ST2 существует плагин
+      <a href="http://ttscoff.github.com/MarkdownEditing/">Markdown Editing</a>,
+      который добавляет все необходимые инструменты для работы с markdown:
+      подсветкой md-тегов, горячие клавиши и приятная тема страницы.
+    </p>
+    <p><img src="./_resources/96819305166_0.png" /></p>
+
+    <p>
+      <strong>Устанавливается плагин</strong> проще простого: через
+      <code>Package Control</code>. У вас нет <code>Package Control</code> в
+      <code>Command Palette</code>?
+      <a href="https://sublime.wbond.net/installation">Решите этот вопрос</a>!
+    </p>
+    <p><strong>Настройки плагина</strong> незатейливы.</p>
+    <pre><code>{
+  "font_size": 12, # размер шрифта 
+  "wrap_width": 76 # ширина колонки
+}
+</code></pre>
+    <p><strong>Горячие клавиши</strong> просты и легко запоминаются:</p>
+    <ul>
+      <li>
+        <strong><code>⌘⌥V</code></strong> (<code>Ctrl+Win+V</code>) вставляет
+        содержимое клипборда, как ссылку для выделенного текста
+      </li>
+      <li>
+        <strong><code>⌘⌥K</code></strong> (<code>Ctrl+Win+K</code>) вставляет
+        ссылку
+      </li>
+      <li>
+        <strong><code>⌘⇧K</code></strong> (<code>Shift+Win+K</code>) вставляет
+        изображение
+      </li>
+      <li>
+        <strong><code>⌘⌥B</code></strong> и
+        <strong><code>⌘⌥I</code></strong> (<code>Alt+Win+B</code> и
+        <code>Alt+Win+I</code>) делают текст полужирным и курсивом
+        соответственно
+      </li>
+      <li>
+        <strong><code>⌘^1</code></strong> ..
+        <strong><code>⌘^6</code></strong> (<code>Ctrl+1</code> ..
+        <code>Ctrl+6</code>) выводят соответствующее количество диезов (#) для
+        заголовков. Если выделена часть строки — диезы ставятся перед этой
+        подстрокой.
+      </li>
+    </ul>
+    <p>
+      Также есть возможность настроить предпросмотр результата текста в
+      html-виде, но я не вижу в этом необходимости.
+    </p>
+    <p>Писать, используя Markdown, в ST2 не только просто, но и красиво.</p>
+    <p><img src="./_resources/96819305166_1.png" /></p>
+
+    <div id="footer">
+      <span id="timestamp"> August 29th, 2013 12:08am </span>
+    </div>
+  </body>
+</html>

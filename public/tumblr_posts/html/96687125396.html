@@ -1,0 +1,56 @@
+        <!DOCTYPE HTML>
+        <html>
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+                <link rel="stylesheet" type="text/css" href="../style.css"/>
+            </head>
+            <body>
+                
+                
+                                    <h1>Как запустить браузер с аргументами из-под Grunt/Gulp/npm</h1>
+                    <p>В некоторых наших проектах требуется, чтобы браузер был запущен с флагом <code>--disable-web-security</code>. Это позволяет делать нужные нам вещи и все такое прочее.</p>
+<p>Оставленный кем-то в Gruntfile.js пакет <code>grunt-open</code> всегда открывает браузер, который выбран в системе. Это можно переопределить, указав явно, какой браузер запускать. Но нельзя указать флаги и там вообще с настройками беда.</p>
+<p>Хорошо, ищем дальше.</p>
+<p>У нас также задействован <code>grunt-contrib-connect</code>, начиная с версии 0.5.0 в котором появилась опция <a href="https://github.com/gruntjs/grunt-contrib-connect#open"><code>open</code></a>. Зачем плодить сущности?</p>
+<p>Выпиливаю из проекта <code>grunt-open</code>, а в <code>grunt-contrib-connect</code> добавляю параметр <code>open</code>.</p>
+<p>Для начала ставлю просто <code>true</code> и проверяю. Открывает системный браузер, что уже хорошо. Как минимум один пакет выпилили из проекта.</p>
+<p>Пишем <code>Google Chrome Canary</code>. Открывает канарейку. Отлично. Осталось добавить флаги и ура!</p>
+<p>Но не тут-то было, рано радовался.</p>
+<p>Пробую <a href="http://stackoverflow.com/questions/21133136/how-to-make-gruntjs-start-chrome-with-flags-set">решение с StackOverflow</a>. Не работает. Танцую с бубном. Не работает.</p>
+<p>Иду читать исходники. Оказывается, и <code>grunt-open</code>, и <code>grunt-contrib-connect</code> используют пакет <a href="https://www.npmjs.org/package/open"><code>npm-open</code></a>. И уже в нем есть базовые органичения, которые и мешают достичь нирваны.</p>
+<p>Если задать настройки, как написано в документации:</p>
+<pre><code>{
+  target: 'http://localhost:3000', // target url to open
+  appName: 'Google Chrome --args --disable-web-security', // name of the app that opens, ie: open, start, xdg-open
+  callback: function() {} // called when the app has opened
+}</code></pre>
+<p class="p1">То все, что указано в <code>appName</code>, пойдет в кавычки и будет вызвано через <code>npm-open</code> так:</p>
+<pre><code>open -n "Google Chrome --args --disable-web-security" "http://localhost:3000"</code></pre>
+<p class="p1">Ну а это совершенно не то, что нам не нужно.</p>
+<p class="p1">После ряда экспериментов стало понятно, что шайтан-машину в лоб обойти не удастся, поэтому я начал думать об обходной дороге. И тут мой взор упал на <code>callback</code>.</p>
+<p class="p1">Немного магии и теперь конфиг выглядит вот так: </p>
+<pre><code>  open: {
+  appName: "hiddenBrowser",
+  callback: function(){
+      var exec = require('child_process').exec;
+      exec('open -a "Google Chrome Canary" --args --disable-web-security "http://localhost:3000"')
+  }
+}</code></pre>
+<p class="p1">«И что тут происходит?» — спросит непонятливый читатель.</p>
+<p class="p1">О, это просто!</p>
+<p class="p1">Мы вызываем неизвестный науке браузер (который не вызовется, хе-хе), а на коллбэке выполняем команду открытия нужного нам браузера с нужной страницей.</p>
+<p class="p1">Да, это костыль только для MacOs, но это рабочий костыль, потому что иного способа запустить браузер с аргументами я не знаю.</p>
+<p class="p1">Вуаля! Задача решена!</p>
+                
+                
+                
+                
+                
+                
+                                <div id="footer">
+                <span id="timestamp"> September 5th, 2014 3:11am </span>
+                                </div>
+            </body>
+        </html>
+
+        

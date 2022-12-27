@@ -1,0 +1,70 @@
+        <!DOCTYPE HTML>
+        <html>
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+                <link rel="stylesheet" type="text/css" href="../style.css"/>
+            </head>
+            <body>
+                
+                
+                                    <h1>'yo angularjs' выдает TypeError?</h1>
+                    <p>Как взрослые дяди, <a href="/all/yeoman-angularjs-generator">поставили generator-angularjs</a> от Кевина Вольфа и решили сгенерировать проект?</p>
+
+<pre><code>npm install -g generator-angularjs  # install generator
+yo angularjs                        # scaffold out a AngularJS project
+</code></pre>
+
+<p>И получаете какую-то ерунду?</p>
+
+<pre><code>TypeError: Cannot read property 'bold' of undefined
+at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/generator-angularjs/node_modules/yeoman-generator/lib/util/common.js:5:56)
+at Module._compile (module.js:456:26)
+at Object.Module._extensions..js (module.js:474:10)
+at Module.load (module.js:356:32)
+at Function.Module._load (module.js:312:12)
+at Module.require (module.js:364:17)
+at require (module.js:380:17)
+at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/generator-angularjs/node_modules/yeoman-generator/lib/base.js:91:26)
+at Module._compile (module.js:456:26)
+at Object.Module._extensions..js (module.js:474:10)
+</code></pre>
+
+<p>Или повелись на сообщение о новом <code>yo</code> и сделали <code>npm update -g yo</code> и получаете ту же самую TypeError?</p>
+
+<p>Все очень просто.</p>
+
+<h3>Решение №1</h3>
+
+<p>Устанавливаете локально генератор</p>
+
+<pre><code>npm install yeoman-generator
+</code></pre>
+
+<p>И руками скопируйте <code>node_modules/yeoman-generator/</code> в папку <code>generator-angularjs</code>. Где у вас эта папка — видно из ошибки.</p>
+
+<p>И все заработает снова.</p>
+
+<h3>Решение №2</h3>
+
+<p>Я нашел решение №1, а потом мне подсказали, <a href="https://github.com/kwolfcr/generator-angularjs/issues/1">как все сделать правильно</a>. </p>
+
+<blockquote>
+  <p>Yo обновил свой <code>yeoman-generator</code> до версии 0.13, а в ней убрали зависимость от пакета <code>colorjs</code>.</p>
+</blockquote>
+
+<p>Для решения проблемы просто пропишите эту зависимость для <code>generator-angularjs</code> и установите пакет <code>colorjs</code>. Вуаля.</p>
+
+<p>PS: А я нашел новый, на первый взгляд более перспективный <a href="https://github.com/cgross/generator-cg-angular">generator-cg-angular</a> c ngmin в коробке. Опробую в ближайшем времени, напишу обзор и попробую создать свой генератор.</p>
+                
+                
+                
+                
+                
+                
+                                <div id="footer">
+                <span id="timestamp"> October 18th, 2013 12:10am </span>
+                                </div>
+            </body>
+        </html>
+
+        

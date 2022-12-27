@@ -1,0 +1,61 @@
+        <!DOCTYPE HTML>
+        <html>
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+                <link rel="stylesheet" type="text/css" href="../style.css"/>
+            </head>
+            <body>
+                
+                
+                                    <h1>Yeoman on MacOs 10.6 + Ruby 1.9.3</h1>
+                    <p>При установке Yeoman на свой MacBook, столкнулся с бедой: выполняя код <tt>npm install -g yo grunt-cli bower</tt>, получал портянку ошибок вида</p>
+
+<pre><code>npm ERR! error rolling back Error: ENOTEMPTY, rmdir '/usr/local/lib/node_modules/yo/node_modules/yeoman-generator/node_modules/bower/test/assets'
+npm ERR! error rolling back  yeoman-generator@0.10.0 { [Error: ENOTEMPTY, rmdir '/usr/local/lib/node_modules/yo/node_modules/yeoman-generator/node_modules/bower/test/assets']
+npm ERR! error rolling back   errno: 53,
+npm ERR! error rolling back   code: 'ENOTEMPTY',
+npm ERR! error rolling back   path: '/usr/local/lib/node_modules/yo/node_modules/yeoman-generator/node_modules/bower/test/assets' }
+npm http 200 <a href="https://registry.npmjs.org/winston">https://registry.npmjs.org/winston</a>
+npm http GET <a href="https://registry.npmjs.org/winston/-/winston-0.6.2.tgz">https://registry.npmjs.org/winston/-/winston-0.6.2.tgz</a>
+npm ERR! Error: ENOENT, lstat '/usr/local/lib/node_modules/yo/node_modules/yeoman-generator/node_modules/request/tests/googledoodle.png'
+npm ERR! If you need help, you may report this log at:
+npm ERR!     <http:>
+npm ERR! or email it to:
+npm ERR!     <npm->
+
+npm ERR! System Darwin 10.8.0
+npm ERR! command "node" "/usr/local/bin/npm" "install" "-g" "yo"
+npm ERR! cwd /Users/admin
+npm ERR! node -v v0.8.20
+npm ERR! npm -v 1.2.11
+npm ERR! path /usr/local/lib/node_modules/yo/node_modules/yeoman-generator/node_modules/request/tests/googledoodle.png
+npm ERR! fstream_path /usr/local/lib/node_modules/yo/node_modules/yeoman-generator/node_modules/request/tests/googledoodle.png
+npm ERR! fstream_type File
+npm ERR! fstream_class FileWriter
+npm ERR! code ENOENT
+npm ERR! errno 34
+</npm-></http:></code></pre>
+
+<p>Первый подход к Yeoman полгода назад был остановлен именно из-за этих ошибок.</p>
+
+<p>Теперь же упорное гугление помогли найти решение.</p>
+
+<pre><code>npm install -g npm@1.2.0 // npm на 1.2.0
+npm install -g yo grunt-cli bower // и все отлично ставится
+npm install generator-angular generator-testacular // angular.js и тесты для angular</code></pre>
+
+<p>Дальше все заработает.</p>
+                
+                
+                
+                
+                
+                
+                                <div id="footer">
+                <span id="timestamp"> February 17th, 2013 9:46am </span>
+                                                          <span class="tag">Blog</span>
+                                                    </div>
+            </body>
+        </html>
+
+        

@@ -1,0 +1,91 @@
+        <!DOCTYPE HTML>
+        <html>
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+                <link rel="stylesheet" type="text/css" href="../style.css"/>
+            </head>
+            <body>
+                
+                
+                                    <h1>Bind-once в Angular, или избавляемся от ненужных проверок и ускоряем Angular.</h1>
+                    <p>На одном проекте мы стали замечать, что мобильное приложение, написанное на AngularJS, начинает притормаживать уже на списках в 20-30 элементов.</p>
+
+<p>«Хм» — сказал я и начал думать, как уменьшить прожорливость Angular.</p>
+
+<p><strong>Конечно, все очевидно</strong>: в список из 20 элементов каждый пункт выводит около 10 переменных, обильно сдобренных <code>ng-show</code> и прочими <code>ng-switch</code>. Ну и в фоне постоянно крутится цикл, проверяющий, а не изменилась ли какая-либо переменная, не надо ли срочно перерисовать весь DOM.</p>
+
+<p>Для этого есть прекрасные решения по <a href="http://habrahabr.ru/post/200670/">оптимизации производительности длинных списков</a>.</p>
+
+<p>Но нам этого не надо, у нас — просто список без интерактивности, который генерируется один раз и все!</p>
+
+<p>Начинаем искать, как нам вставить переменную в шаблона так, чтобы показать ее, но не отслеживать впредь — чтобы уменьшить нагрузку.</p>
+
+<h2>Вариант №1: Директива в лоб</h2>
+
+<pre><code>angular.module('app', [])
+.directive('text', function() {        
+    return {
+        restrict: 'A',
+        scope: {
+          text: "="
+        },
+        link: function(scope, element, attrs){
+          element.html(scope.text);
+        }
+    }
+});
+
+// $scope.word = "word";
+&lt;span text="word"&gt;&lt;/span&gt;
+</code></pre>
+
+<p>Работает. Но не очень удобно каждую переменную «директивить». Хочется большего. </p>
+
+<h2>Вариант №2: Директива по лбу</h2>
+
+<pre><code>angular.module('app', [])
+.directive('bindOnce', function() {
+    return {
+        scope: true,
+        link: function( $scope, $element ) {
+            setTimeout(function() {
+                $scope.$destroy();
+            }, 0);
+        }
+    }
+});
+
+// $scope.word = "word";
+&lt;div bind-once&gt;
+    {{word}}
+    &lt;div ng-bind="word"&gt;&lt;/div&gt;
+&lt;/div&gt; 
+</code></pre>
+
+<p>Вот оно — решение! Просто используем <code>bind-once</code> и забываем обо всем.</p>
+
+<ul><li><a href="http://jsfiddle.net/Vq93Y/5/">Пример 1</a>: ng-repeat без bind-once. При изменении текста в инпуте видны подтормаживания браузера даже на свежем MBP. А что говорить о более слабых машинах?</li>
+<li><a href="http://jsfiddle.net/Vq93Y/4/">Пример 2</a>: Применяем bind-once к каждому элементу ng-repeat. Затыков поменьше, но они есть.</li>
+<li><a href="http://jsfiddle.net/Vq93Y/6/">Пример 3</a>: Применяем bind-once для родителя над ng-repeat. Выключаем весь скоуп с детьми целиком. Задержет нет, все работает плавно.</li>
+</ul><h2>Вариант №3: pasvaz.bindonce</h2>
+
+<p>Еще один вариант «одноразовой» вставки переменных в шаблон предложен Паскуалле Вазанна из Венесуэлы: <a href="https://github.com/Pasvaz/bindonce">bindonce</a>.</p>
+
+<p>Вариант рабочий, но <em>моем проекте</em> он показался мне неудобным: надо использовать иной синтакис и зависеть от предлагаемых автором решений: <code>bo-if</code>, <code>bo-show</code> и прочие <code>bo-href-i</code> и <code>bo-href</code>.</p>
+
+<blockquote>
+  <p>Вот такое маленькое исследование пришлось провести мне, решая задачу «одноразовой» вставки переменных в шаблон. Надеюсь, оно помогло о вам.</p>
+</blockquote>
+                
+                
+                
+                
+                
+                
+                                <div id="footer">
+                <span id="timestamp"> December 11th, 2013 12:12am </span>
+                                </div>
+            </body>
+        </html>
+
+        

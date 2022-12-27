@@ -1,0 +1,73 @@
+        <!DOCTYPE HTML>
+        <html>
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+                <link rel="stylesheet" type="text/css" href="../style.css"/>
+            </head>
+            <body>
+                
+                
+                                    <h1>Компиляция Jade в Yeoman 0.9</h1>
+                    <p>Выполняем <tt>npm install grunt-jade</tt> в текущем проекте.</p>
+
+<p>Если консоль ругается на отсутствие <tt>name</tt> — пишем в package.json имя приложения и устанавливаем заново.</p>
+
+<p>Добавляем в Gruntfile.js следующие строки в самое начало</p>
+
+<pre><code>grunt.loadNpmTasks('grunt-jade');
+</code></pre>
+
+<p>В середину</p>
+
+<pre><code>jade: {
+  html: {
+    src: ['app/views/*.jade'],
+    dest: 'app/views',
+    options: {
+      client: false
+    }
+  }
+},
+</code></pre>
+
+<p>Т.к. мы хотим отслеживать изменения jade-файлов, добавляем в watch-раздел</p>
+
+<pre><code>watch: {
+ ...
+  jade: {
+    files: 'app/views/*.jade',
+    tasks: 'jade'
+  },
+  reload: { // или добавляем в существующую
+    files: [
+      'app/*.jade'
+    ]
+  }
+ ...
+}
+</code></pre>
+
+<p>В самом низу добавляем крайне важные строки. Это позволит скомпилировать jade-шаблоны перед запуском сервера.</p>
+
+<pre><code>// include jade compile
+grunt.renameTask('server', 'original-server');
+grunt.registerTask('server', 'jade original-server');
+</code></pre>
+
+<p>Создаем тестовый jade-файл в категории, которую мы отслеживаем. Пишем туда <a href="http://fiddlesalad.com/jade/test-angularjs-with-jade-stylus-coffeescript/">что угодно</a> в jade-формате.</p>
+
+<p>Запускаем сервер — jade компилится и обновляемся при изменении исходного файла.</p>
+                
+                
+                
+                
+                
+                
+                                <div id="footer">
+                <span id="timestamp"> February 20th, 2013 7:45am </span>
+                                                          <span class="tag">Blog</span>
+                                                    </div>
+            </body>
+        </html>
+
+        
