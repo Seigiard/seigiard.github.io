@@ -13,7 +13,7 @@ const allPosts = (await getCollection('tumblr')).sort((a, b) =>
         {
             allPosts.map((post) => (
                 <li>
-                    <a href={`./tumblr/${post?.slug}`}>
+                    <a href={`/tumblr/${post?.slug}`}>
                         {post?.title || post?.slug}
                     </a>
                 </li>
