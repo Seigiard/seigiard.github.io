@@ -3,8 +3,8 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Tumblr.astro';
 
 const pageTitle = 'Tumblr Post Archive';
-const allPosts = (await getCollection('tumblr')).sort(
-    (a, b) => b?.slug?.valueOf() - a?.slug?.valueOf()
+const allPosts = (await getCollection('tumblr')).sort((a, b) =>
+    a?.slug?.valueOf().localeCompare(b?.slug?.valueOf())
 );
 ---
 
