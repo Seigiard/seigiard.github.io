@@ -99,6 +99,26 @@ body {
     padding: 0 2em 2em;
 }
 
+nav menu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1em;
+}
+nav menu li {
+    list-style: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+nav menu li a.return-back::before {
+    content: "⬅";
+    display: inline-block;
+    padding-right: 0.35rem;
+    /* content: "⏎"; */
+    /* transform: scale(1, -1) translateY(0.05rem); */
+}
+
 a {
     color: #056ca9;
     -webkit-text-decoration-skip: ink;

@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Tumblr.astro';
+
+const pageTitle = 'Tumblr Post Archive';
+const allPosts = (await getCollection('tumblr')).sort(
+    (a, b) => b?.slug?.valueOf() - a?.slug?.valueOf()
+);
+---
+
+<Layout lang='ru' title={pageTitle}>
+    <ul>
+        {
+            allPosts.map((post) => (
+                <li>
+                    <a href={`./tumblr/${post?.slug}`}>
+                        {post?.title || post?.slug}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</Layout>
