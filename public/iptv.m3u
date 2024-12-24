@@ -1,4 +1,4 @@
-#EXTM3U tvg-url="https://epg.pw/api/epg.xml?lang=en&date=20241224&channel_id=3269"
+#EXTM3U tvg-url="https://epg.pw/api/epg.xml?lang=en&channel_id=3269"
 
 #EXTINF:-1 tvg-id="3269" tvg-logo="https://i.imgur.com/aqVki9i.png" group-title="General",Jednotka (960p)
 http://88.212.15.27/live/test_jednotka_25p/playlist.m3u8
