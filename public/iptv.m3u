@@ -1,22 +1,22 @@
-#EXTM3U
+#EXTM3U x-tvg-url="https://services.mujtvprogram.cz/tvprogram2services/services/tvprogrammelist_mobile.php?channel_cid=181,https://services.mujtvprogram.cz/tvprogram2services/services/tvprogrammelist_mobile.php?channel_cid=180,https://services.mujtvprogram.cz/tvprogram2services/services/tvprogrammelist_mobile.php?channel_cid=1016,https://services.mujtvprogram.cz/tvprogram2services/services/tvprogrammelist_mobile.php?channel_cid=183,https://services.mujtvprogram.cz/tvprogram2services/services/tvprogrammelist_mobile.php?channel_cid=1114,https://services.mujtvprogram.cz/tvprogram2services/services/tvprogrammelist_mobile.php?channel_cid=1017,https://services.mujtvprogram.cz/tvprogram2services/services/tvprogrammelist_mobile.php?channel_cid=308,https://services.mujtvprogram.cz/tvprogram2services/services/tvprogrammelist_mobile.php?channel_cid=182"
 
-#EXTINF:-1 tvg-id="Jednotka.sk" tvg-logo="https://i.imgur.com/aqVki9i.png" group-title="General",Jednotka (960p)
+#EXTINF:-1 tvg-id="181" tvg-logo="https://i.imgur.com/aqVki9i.png" group-title="General",Jednotka (960p)
 http://88.212.15.27/live/test_jednotka_25p/playlist.m3u8
-#EXTINF:-1 tvg-id="Dvojka.sk" tvg-logo="https://i.imgur.com/ft10wQn.png" group-title="General",Dvojka (960p)
+#EXTINF:-1 tvg-id="180" tvg-logo="https://i.imgur.com/ft10wQn.png" group-title="General",Dvojka (960p)
 http://88.212.15.27/live/test_dvojka_25p/playlist.m3u8
-#EXTINF:-1 tvg-id="24.sk" tvg-logo="https://i.imgur.com/tTCuczU.png" group-title="News",:24 (1080p)
+#EXTINF:-1 tvg-id="1016" tvg-logo="https://i.imgur.com/tTCuczU.png" group-title="News",:24 (1080p)
 http://88.212.15.27/live/test_trojka_25p/playlist.m3u8
 
-#EXTINF:-1 tvg-id="Markiza.sk" tvg-logo="https://i.imgur.com/W56rOi2.png" group-title="General",Markíza (1080p)
+#EXTINF:-1 tvg-id="183" tvg-logo="https://i.imgur.com/W56rOi2.png" group-title="General",Markíza (1080p)
 http://88.212.15.27/live/test_markiza_25p/playlist.m3u8
-#EXTINF:-1 tvg-id="MarkizaKlasik.sk" tvg-logo="https://sledovanietv.sk/cache/logos256/markiza_klasik.png" group-title="Entertainment",Markiza Klasik (1080p)
+#EXTINF:-1 tvg-id="1114" tvg-logo="https://sledovanietv.sk/cache/logos256/markiza_klasik.png" group-title="Entertainment",Markiza Klasik (1080p)
 https://cdnsk003.panaccess.com/local/Markiza_Klasik/index.m3u8
-#EXTINF:-1 tvg-id="MarkizaKrimi.sk" tvg-logo="https://i.imgur.com/5KnajhP.png" group-title="Entertainment",Markiza Krimi (1080p)
+#EXTINF:-1 tvg-id="1017" tvg-logo="https://i.imgur.com/5KnajhP.png" group-title="Entertainment",Markiza Krimi (1080p)
 https://cdnsk003.panaccess.com/local/Markiza_krimi/index.m3u8
 
-#EXTINF:-1 tvg-id="MarkizaDajto.sk" tvg-logo="https://i.imgur.com/DdWj4xv.png" group-title="General",DajTo (960p)
+#EXTINF:-1 tvg-id="308" tvg-logo="https://i.imgur.com/DdWj4xv.png" group-title="General",DajTo (960p)
 http://88.212.15.27/live/test_dajto_25p/playlist.m3u8
-#EXTINF:-1 tvg-id="MarkizaDoma.sk" tvg-logo="https://i.imgur.com/emVnkFK.png" group-title="Entertainment",Doma (1080p)
+#EXTINF:-1 tvg-id="182" tvg-logo="https://i.imgur.com/emVnkFK.png" group-title="Entertainment",Doma (1080p)
 http://88.212.7.11/live/test_doma_hd_hevc/playlist.m3u8
 
 #EXTINF:-1 tvg-id="TVCentral.sk" tvg-logo="https://i.imgur.com/LqGT8o9.png" group-title="General",TV Central (540p)
@@ -30,11 +30,3 @@ https://ocko-live-dash.ssl.cdn.cra.cz/cra_live2/ocko.stream.1.smil/playlist.m3u8
 https://ocko-live.ssl.cdn.cra.cz/channels/ocko_expres/playlist.m3u8
 #EXTINF:-1 tvg-id="OckoGold.cz" tvg-logo="https://i.imgur.com/nrWNyLc.jpg" group-title="Music",Óčko Gold (540p)
 https://ocko-live.ssl.cdn.cra.cz/channels/ocko_gold/playlist.m3u8
-
-
-#EXTINF:-1 tvg-id="Jednotka.sk (old)" tvg-logo="https://i.imgur.com/aqVki9i.png" group-title="General",Jednotka (old) (960p)
-http://213.81.133.133:8080/jednotka/index.m3u8
-#EXTINF:-1 tvg-id="Dvojka.sk (old)" tvg-logo="https://i.imgur.com/ft10wQn.png" group-title="General",Dvojka (old) (960p)
-http://213.81.133.133:8080/dvojka/index.m3u8
-#EXTINF:-1 tvg-id="MarkizaDajto.sk (old)" tvg-logo="https://i.imgur.com/DdWj4xv.png" group-title="General",DajTo (old) (960p)
-http://213.81.133.133:8080/dajto/index.m3u8
