@@ -6,6 +6,7 @@ export interface Props extends HeaderProps {
 }
 
 const props = Astro.props;
+
 const { title, lang, backLink } = props;
 
 const ownerName = lang === 'ru' ? 'Андрей Борисенко' : 'Andrew Borisenko';
