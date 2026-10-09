@@ -33,6 +33,11 @@ Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🧞 Commands
 
+`bun install` installs Lefthook's pre-commit hook in Git checkouts. It lints
+staged JavaScript/TypeScript and runs `bun run build` for staged source or
+configuration changes, including Astro pages. Vendored lint rules are excluded.
+Installs without `.git` skip hook setup.
+
 All commands are run from the root of the project, from a terminal:
 
 | Command                | Action                                             |

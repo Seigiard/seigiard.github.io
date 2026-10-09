@@ -1,0 +1,16 @@
+glob_matcher: doublestar
+
+pre-commit:
+  piped: true
+  jobs:
+    - name: lint
+      glob: '**/*.{ts,tsx,js,jsx,mjs,cjs}'
+      exclude:
+        - 'tools/oxlint/anti-slop/**'
+        - 'public/meizu-m2/shower/**'
+      run: bunx --no-install oxlint --fix --no-error-on-unmatched-pattern {staged_files}
+      stage_fixed: true
+    - name: build
+      glob: '**/*.{astro,ts,tsx,js,jsx,mjs,cjs,css,scss,json}'
+      exclude: 'tools/oxlint/anti-slop/**'
+      run: bun run build
