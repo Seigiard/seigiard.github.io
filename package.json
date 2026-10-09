@@ -10,13 +10,15 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prepare": "if [ -e .git ]; then lefthook install; fi"
   },
   "dependencies": {
     "astro": "^4.16.19"
   },
   "devDependencies": {
     "@oxlint/plugins": "1.87.0",
-    "oxlint": "1.87.0"
+    "oxlint": "1.87.0",
+    "lefthook": "2.2.1"
   }
 }
